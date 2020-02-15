@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import AxiosWithAuth from "./AxiosWithAuth";
+import { Button } from "reactstrap";
+import "../App.css";
 
 const Login = props => {
   const [friends, setFriends] = useState({
@@ -28,9 +30,9 @@ const Login = props => {
   };
 
   return (
-    <div>
+    <div className="log-in">
       <form onSubmit={login}>
-        <h2>Login Here</h2>
+        <h2>Login</h2>
         <label>Username</label>
         <input
           type="text"
@@ -46,7 +48,7 @@ const Login = props => {
           value={friends.credentials.password}
           onChange={handleChange}
         />
-        <button>Log in</button>
+        <Button>Log in</Button>
       </form>
     </div>
   );
